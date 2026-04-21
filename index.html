@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Observation Window</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at center, rgba(120, 20, 20, 0.18), transparent 35%),
+        linear-gradient(180deg, #050505 0%, #000000 100%);
+      color: #e7e2d8;
+      font-family: "Courier New", Courier, monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 24px;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        repeating-radial-gradient(circle at 17% 32%, rgba(255,255,255,0.8) 0px, rgba(255,255,255,0.8) 1px, transparent 1px, transparent 4px);
+      mix-blend-mode: screen;
+    }
+
+    .container {
+      width: min(680px, 100%);
+      border: 1px solid rgba(231, 226, 216, 0.42);
+      padding: 42px 28px;
+      background: rgba(0, 0, 0, 0.64);
+      box-shadow:
+        0 0 60px rgba(255, 255, 255, 0.05),
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
+    }
+
+    .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      color: #8f8677;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      margin: 0 0 28px;
+      font-weight: 700;
+    }
+
+    .question {
+      font-size: clamp(1.05rem, 3vw, 1.35rem);
+      line-height: 1.7;
+      color: #c9c0b2;
+      margin-bottom: 36px;
+    }
+
+    .small {
+      font-size: 0.78rem;
+      color: #776f64;
+      line-height: 1.7;
+      margin-top: 34px;
+      letter-spacing: 0.12em;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      background: transparent;
+      color: #e7e2d8;
+      border: 1px solid rgba(231, 226, 216, 0.65);
+      min-width: 120px;
+      padding: 13px 28px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      transition: 160ms ease;
+    }
+
+    button:hover {
+      background: #e7e2d8;
+      color: #050505;
+      transform: translateY(-1px);
+    }
+
+    #response {
+      display: none;
+      font-size: clamp(1.3rem, 4vw, 2.2rem);
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      color: #d7d0c5;
+    }
+
+    .thin-line {
+      width: 100%;
+      height: 1px;
+      background: rgba(231, 226, 216, 0.25);
+      margin: 26px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <main class="container" id="questionBox">
+    <div class="label">OBSERVATION WINDOW OPEN</div>
+
+    <h1>HAVING<br>STRANGE<br>DREAMS?</h1>
+
+    <div class="thin-line"></div>
+
+    <p class="question">
+      Do you keep seeing the atom?<br>
+      It starts as a diagram.<br>
+      Then it becomes a room.<br>
+      Then you realize the electron was never there.
+    </p>
+
+    <div class="buttons">
+      <button onclick="goToProject()">YES</button>
+      <button onclick="showResponse()">NO</button>
+    </div>
+
+    <div class="small">
+      AR ATOMIC JOURNEY // QUEST 3 MR DEMO<br>
+      RESPONSE REQUIRED
+    </div>
+  </main>
+
+  <section class="container" id="response">
+    Thank you for your response.
+  </section>
+
+  <script>
+    function goToProject() {
+      window.location.href = "https://grateful-sushi-c87.notion.site/Atomic-Gum-348b7de307dc80e8bba8fdea628c673d";
+    }
+
+    function showResponse() {
+      document.getElementById("questionBox").style.display = "none";
+      document.getElementById("response").style.display = "block";
+    }
+  </script>
+</body>
+</html>
