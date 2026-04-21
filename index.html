@@ -131,17 +131,11 @@
 
     <div class="thin-line"></div>
 
-    <p class="question">
-      Do you keep seeing the atom?<br>
-      It starts as a diagram.<br>
-      Then it becomes a room.<br>
-      Then you realize the electron was never there.
-    </p>
 
-    <div class="buttons">
-      <button onclick="goToProject()">YES</button>
-      <button onclick="showResponse()">NO</button>
-    </div>
+  <div class="buttons">
+  <button type="button" onclick="goToProject()">YES</button>
+  <button type="button" onclick="showResponse()">NO</button>
+</div>
 
     <div class="small">
       AR ATOMIC JOURNEY // QUEST 3 MR DEMO<br>
@@ -153,15 +147,18 @@
     Thank you for your response.
   </section>
 
-  <script>
-    function goToProject() {
-      window.location.href = https://grateful-sushi-c87.notion.site/Atomic-Gum-348b7de307dc80e8bba8fdea628c673d;
-    }
+<script>
+  function goToProject() {
+    window.location.assign("https://grateful-sushi-c87.notion.site/Atomic-Gum-348b7de307dc80e8bba8fdea628c673d");
+  }
 
-    function showResponse() {
-      document.getElementById("questionBox").style.display = "none";
-      document.getElementById("response").style.display = "block";
-    }
-  </script>
+  function showResponse() {
+    const questionBox = document.getElementById("questionBox");
+    const response = document.getElementById("response");
+
+    questionBox.style.display = "none";
+    response.style.display = "block";
+  }
+</script>
 </body>
 </html>
